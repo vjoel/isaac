@@ -1,0 +1,3 @@
+The ISAAC implementation is Public Domain, created by Bob Jenkins.
+
+The ruby wrapping is by Joel VanderWerf, and all wrapping code distinct from the ISAAC code is also public domain.

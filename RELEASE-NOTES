@@ -1,0 +1,17 @@
+isaac 0.0.3
+
+* Based on Bob Jenkins' comments on ruby-talk, use 256-entry state vectors, rather than 16-entry. Also, some benchmarking (bench/bench.rb) verifies that,
+for long sequences, 256-entry state vectors are slightly faster, so even for simulation there is not much reason to use 16-entry vectors, unless you have a large number of sequences.
+
+* Fixed #srand so that it clears the entire state before setting the seed, so
+that an instance can be reset to produce the same sequence. However, #srand no
+longer returns the current state values, since they may differ from the original seed values.
+
+isaac 0.0.2
+
+* First public release
+
+isaac 0.0.1
+
+* Working wrapper around Bob Jenkins' ISAAC code.
+  
