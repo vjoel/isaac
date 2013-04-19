@@ -1,3 +1,7 @@
+isaac 0.0.4
+
+* Update for ruby 1.9 and 2.0.
+
 isaac 0.0.3
 
 * Based on Bob Jenkins' comments on ruby-talk, use 256-entry state vectors, rather than 16-entry. Also, some benchmarking (bench/bench.rb) verifies that,
