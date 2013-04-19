@@ -29,8 +29,8 @@ ISAAC_srand(VALUE self, VALUE ary)
     Data_Get_Struct(self, randctx, ctx);
     
     MEMZERO(ctx, randctx, 1);
-    for (i=min(RANDSIZ, RARRAY(ary)->len)-1; i>=0; i--) {
-        ctx->randrsl[i] = NUM2UINT(RARRAY(ary)->ptr[i]);
+    for (i=min(RANDSIZ, RARRAY_LEN(ary))-1; i>=0; i--) {
+        ctx->randrsl[i] = NUM2UINT(RARRAY_PTR(ary)[i]);
     }
     isaac_init(ctx, 1);
 
@@ -100,11 +100,11 @@ ISAAC_marshal_load(VALUE self, VALUE ary)
 
     Data_Get_Struct(self, randctx, ctx);
 
-    if (RARRAY(ary)->len != ary_size)
+    if (RARRAY_LEN(ary) != ary_size)
         rb_raise(rb_eArgError, "bad length in loaded ISAAC data");
 
     for (i = 0; i < ary_size; i++) {
-        ((ub4 *)ctx)[i] = NUM2UINT(RARRAY(ary)->ptr[i]);
+        ((ub4 *)ctx)[i] = NUM2UINT(RARRAY_PTR(ary)[i]);
     }
     
     return self;
