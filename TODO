@@ -1,0 +1,13 @@
+0..1 output
+
+Rand.rb
+
+nr/random style stuff
+
+  seeding from /dev/rand or clock+pid+seq
+
+namespace
+
+init seed using ruby's #rand
+
+make RANDSIZL switchable in ruby (see rand.h)
