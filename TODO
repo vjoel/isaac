@@ -1,13 +1,9 @@
-0..1 output
-
-Rand.rb
-
 nr/random style stuff
-
-  seeding from /dev/rand or clock+pid+seq
+  seeding from /dev/rand or clock+pid+seq or #rand
+  distribution sampling
 
 namespace
+  random/isaac
 
-init seed using ruby's #rand
-
-make RANDSIZL switchable in ruby (see rand.h)
+gem
+  random-isaac
