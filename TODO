@@ -3,6 +3,3 @@ nr/random style stuff
   distribution sampling
 
 methods like in Ruby's Random class
-
-gem
-  prng-isaac
