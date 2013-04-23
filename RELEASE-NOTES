@@ -1,5 +1,9 @@
 isaac 0.0.5
 
+* Available as a gem: prng-isaac.
+
+* Classes are in PRNG module.
+
 * Added ISAAC4 for simulation (not crypo).
 
 * Add unit tests.
