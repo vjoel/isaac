@@ -221,10 +221,12 @@ Init_isaac()
 {
     VALUE ISAAC;
     VALUE ISAAC4;
+    VALUE mPRNG;
 
-    ISAAC = rb_define_class("ISAAC", rb_cObject);
-    ISAAC4 = rb_define_class("ISAAC4", rb_cObject);
-    
+    mPRNG = rb_define_module("PRNG");
+    ISAAC = rb_define_class_under(mPRNG, "ISAAC", rb_cObject);
+    ISAAC4 = rb_define_class_under(mPRNG, "ISAAC4", rb_cObject);
+        
     rb_define_alloc_func(ISAAC, ISAAC_s_allocate);
     rb_define_method(ISAAC, "srand", ISAAC_srand, 1);
     rb_define_method(ISAAC, "rand32", ISAAC_rand32, 0);

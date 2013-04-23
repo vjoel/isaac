@@ -1,6 +1,8 @@
 require 'benchmark'
 require 'isaac'
 
+include PRNG
+
 srand(1) # use ruby's prng to seed isaac
 ary = (0..255).map {rand(2**32-1)}
 r = ISAAC.new

@@ -1,6 +1,8 @@
 require 'minitest/autorun'
 require 'isaac'
 
+include PRNG
+
 class TestIsaac < MiniTest::Unit::TestCase
   SEED = (0..255).map {rand(2**32-1)}
     # note that minitest supplies the seed to ruby's Kernel#rand

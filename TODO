@@ -2,8 +2,7 @@ nr/random style stuff
   seeding from /dev/rand or clock+pid+seq or #rand
   distribution sampling
 
-namespace
-  random/isaac
+methods like in Ruby's Random class
 
 gem
-  random-isaac
+  prng-isaac
