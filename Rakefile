@@ -46,7 +46,7 @@ Rake::TestTask.new :test => :ext do |t|
 end
 
 desc "Commit, tag, and push repo; build and push gem"
-task :release => "release:is_new_version" do
+task :release => ["release:is_new_version", :test] do
   require 'tempfile'
   
   sh "gem build #{PRJ}.gemspec"
