@@ -1,7 +1,7 @@
 require 'rake'
 require 'rake/testtask'
 
-PRJ = "isaac"
+PRJ = "prng-isaac"
 
 def version
   @version ||= begin
