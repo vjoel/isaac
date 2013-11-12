@@ -3,7 +3,7 @@ require 'isaac'
 
 include PRNG
 
-class TestIsaac < MiniTest::Unit::TestCase
+class TestIsaac < Minitest::Test
   SEED = (0..255).map {rand(2**32-1)}
     # note that minitest supplies the seed to ruby's Kernel#rand
     # use '--seed N' to select a particular seed
