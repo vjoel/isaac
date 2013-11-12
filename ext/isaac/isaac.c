@@ -226,6 +226,7 @@ Init_isaac()
     mPRNG = rb_define_module("PRNG");
     ISAAC = rb_define_class_under(mPRNG, "ISAAC", rb_cObject);
     ISAAC4 = rb_define_class_under(mPRNG, "ISAAC4", rb_cObject);
+    rb_define_const(ISAAC, "VERSION", rb_str_new_cstr("0.1"));
         
     rb_define_alloc_func(ISAAC, ISAAC_s_allocate);
     rb_define_method(ISAAC, "srand", ISAAC_srand, 1);
