@@ -4,12 +4,7 @@ require 'rake/testtask'
 PRJ = "prng-isaac"
 
 def version
-  @version ||= begin
-    require 'isaac'
-    ver = PRNG::ISAAC::VERSION
-    warn "VERSION not a string" unless ver.kind_of? String
-    ver
-  end
+  @version or abort "this task should => :version"
 end
 
 def tag
@@ -81,7 +76,13 @@ namespace :release do
     sh "git log #{latest}.."
   end
 
-  task :is_new_version do
+  task :is_new_version => :version do
     abort "#{tag} exists; update version!" unless `git tag -l #{tag}`.empty?
+  end
+
+  task :version => :ext do
+    require 'isaac'
+    @version = PRNG::ISAAC::VERSION
+    warn "VERSION not a string" unless @version.kind_of? String
   end
 end
